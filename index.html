@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>인스타 광고 전용 랜딩페이지 | 코인 선물 문의</title>
+  <meta name="description" content="인스타그램 광고에서 바로 문의로 전환시키는 코인 선물 랜딩페이지" />
+  <style>
+    :root {
+      --bg: #070b16;
+      --bg-soft: #11182b;
+      --card: #101a31;
+      --line: #253456;
+      --text: #edf2ff;
+      --muted: #9db0d8;
+      --point: #4f8dff;
+      --point-2: #2b64d6;
+      --accent: #ffcf5a;
+      --danger-bg: #381627;
+      --danger-line: #7f3a59;
+      --danger-text: #ffd2e7;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: "Segoe UI", "Noto Sans KR", Arial, sans-serif;
+      color: var(--text);
+      background: radial-gradient(900px 450px at 80% -10%, #2f5ecf55, transparent), var(--bg);
+      line-height: 1.6;
+    }
+    img { display: block; max-width: 100%; border-radius: 14px; }
+    .hero-media img,
+    .img-box img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      image-rendering: -webkit-optimize-contrast;
+    }
+    .wrap { width: min(1140px, 92vw); margin: 0 auto; }
+    .section { padding: 70px 0; border-bottom: 1px solid var(--line); }
+    .hero {
+      padding: 90px 0 64px;
+      display: grid;
+      gap: 24px;
+      grid-template-columns: 1.15fr 1fr;
+      align-items: center;
+    }
+    .badge {
+      display: inline-block;
+      border: 1px solid #3f5e9f;
+      color: #bdd0ff;
+      font-size: 12px;
+      border-radius: 999px;
+      padding: 6px 12px;
+      background: #0d1730;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(32px, 4.2vw, 52px);
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+    }
+    h2 {
+      margin: 0 0 14px;
+      font-size: clamp(24px, 3vw, 36px);
+      letter-spacing: -0.3px;
+    }
+    h3 { margin: 0 0 8px; font-size: 18px; }
+    p { margin: 0; }
+    .muted { color: var(--muted); }
+    .hero-copy strong { color: var(--accent); }
+    .btns {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 26px;
+    }
+    .btn {
+      text-decoration: none;
+      min-height: 46px;
+      border-radius: 11px;
+      padding: 11px 18px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid transparent;
+      transition: transform .15s ease, opacity .15s ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn.primary {
+      color: #fff;
+      background: linear-gradient(180deg, var(--point), var(--point-2));
+    }
+    .btn.secondary {
+      color: var(--text);
+      background: #121c35;
+      border-color: #355089;
+    }
+    .hero-media {
+      background: #0f1830;
+      border: 1px solid #324978;
+      border-radius: 16px;
+      padding: 12px;
+    }
+    .hero-media small {
+      display: block;
+      margin-top: 10px;
+      color: #94a9d5;
+      font-size: 12px;
+    }
+    .risk {
+      margin-top: 14px;
+      background: var(--danger-bg);
+      border: 1px solid var(--danger-line);
+      color: var(--danger-text);
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: 13px;
+    }
+    .stats {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .stat {
+      background: #101a32;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px;
+    }
+    .stat b { display: block; font-size: 21px; }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px;
+    }
+    .img-row {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .img-box {
+      background: #0f1830;
+      border: 1px solid #2b406c;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .img-box p {
+      padding: 10px 12px;
+      font-size: 13px;
+      color: #9bb0da;
+      border-top: 1px solid #2b406c;
+    }
+    .zoom-btn {
+      width: 100%;
+      margin-top: 8px;
+      background: #122148;
+      color: #dce8ff;
+      border: 1px solid #32528f;
+      border-radius: 10px;
+      min-height: 38px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .zoom-btn:hover { background: #162958; }
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(4, 7, 14, 0.92);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      z-index: 100;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img {
+      max-width: min(1600px, 95vw);
+      max-height: 88vh;
+      border-radius: 12px;
+      border: 1px solid #3a5387;
+    }
+    .lightbox-close {
+      position: fixed;
+      top: 18px;
+      right: 18px;
+      min-height: 40px;
+      min-width: 40px;
+      border-radius: 50%;
+      border: 1px solid #4d6da8;
+      background: #1a2b52;
+      color: #e8efff;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    .proof {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .list {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+    .list li { margin: 6px 0; }
+    .inquiry {
+      margin-top: 20px;
+      background: linear-gradient(180deg, #0f1d3b, #10172a);
+      border: 1px solid #365086;
+      border-radius: 16px;
+      padding: 20px;
+      display: grid;
+      gap: 18px;
+      grid-template-columns: 1.1fr 1fr;
+      align-items: start;
+    }
+    .countdown {
+      margin-top: 12px;
+      color: #f8d788;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    form { display: grid; gap: 10px; }
+    input, select, textarea {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid #344f86;
+      background: #0d162e;
+      color: #e8efff;
+      padding: 11px 12px;
+      font: inherit;
+    }
+    textarea { min-height: 100px; resize: vertical; }
+    .fine {
+      color: #91a7d8;
+      font-size: 12px;
+      margin-top: 8px;
+    }
+    .sticky-cta {
+      position: fixed;
+      right: 14px;
+      bottom: 14px;
+      z-index: 10;
+    }
+    .sticky-cta a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 16px;
+      border-radius: 999px;
+      text-decoration: none;
+      background: linear-gradient(180deg, #4f8dff, #2d66d8);
+      color: #fff;
+      font-weight: 800;
+      border: 1px solid #6aa2ff;
+      box-shadow: 0 8px 26px #0a214c;
+    }
+    footer {
+      padding: 26px 0 44px;
+      color: #8fa5d0;
+      font-size: 13px;
+    }
+    @media (max-width: 900px) {
+      .hero,
+      .inquiry,
+      .proof {
+        grid-template-columns: 1fr;
+      }
+      .grid-3,
+      .img-row {
+        grid-template-columns: 1fr;
+      }
+      .stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero section">
+      <div class="hero-copy">
+        <span class="badge">인스타 광고 유입 전용 페이지</span>
+        <h1>잃지 않는 기준부터 배우는 <br />코인 선물 1:1 실전 코칭</h1>
+        <p class="muted">무작정 진입이 아닌 <strong>진입 기준, 손절 기준, 익절 기준</strong>을 먼저 세우는 방식으로 안내합니다. 초보도 이해 가능한 커리큘럼으로 시작하세요.</p>
+        <div class="btns">
+          <a class="btn primary" href="#inquiry">지금 무료 상담 신청</a>
+          <a class="btn secondary" href="#proof">검증 내용 먼저 보기</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><small class="muted">상담 신청자</small><b>2,300+</b></div>
+          <div class="stat"><small class="muted">누적 코칭 시간</small><b>4,800h+</b></div>
+          <div class="stat"><small class="muted">재수강 비율</small><b>71%</b></div>
+        </div>
+        <p class="risk">가상자산 파생상품 거래는 높은 변동성과 원금 손실 위험이 있습니다. 본 페이지는 수익을 보장하지 않으며, 모든 투자의 책임은 본인에게 있습니다.</p>
+      </div>
+      <div class="hero-media">
+        <img src="/.cursor/projects/c-Users-user-cursor/assets/c__Users_user_AppData_Roaming_Cursor_User_workspaceStorage_5c6c1454ed90c7906359a13de0107f6d_images_image-b666d6f4-5b32-493c-a971-f4a117293219.png" alt="실전 차트 이미지" />
+        <small>실전 차트 리딩 예시 이미지</small>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>왜 문의가 몰리는지, 결과로 보여드립니다</h2>
+      <p class="muted">인스타에서 보고 오신 분들이 가장 많이 물어보는 핵심을 먼저 정리했습니다.</p>
+      <div class="grid-3">
+        <article class="card">
+          <h3>1) 진입 타이밍 기준표 제공</h3>
+          <p class="muted">감으로 눌러 사는 습관을 끊고, 조건 충족 시에만 진입하도록 훈련합니다.</p>
+        </article>
+        <article class="card">
+          <h3>2) 손절/익절 자동화 루틴</h3>
+          <p class="muted">손실 확대를 줄이고, 수익 구간에서 지키는 습관을 만들 수 있습니다.</p>
+        </article>
+        <article class="card">
+          <h3>3) 개인별 피드백</h3>
+          <p class="muted">매매일지를 기반으로 실제 실수 패턴을 짚어 개선 방향을 안내합니다.</p>
+        </article>
+      </div>
+
+      <div class="img-row">
+        <figure class="img-box">
+          <img src="/.cursor/projects/c-Users-user-cursor/assets/c__Users_user_AppData_Roaming_Cursor_User_workspaceStorage_5c6c1454ed90c7906359a13de0107f6d_images_image-b666d6f4-5b32-493c-a971-f4a117293219.png" alt="실전 차트 분석 예시" />
+          <p>차트 기준 설정 예시</p>
+          <button class="zoom-btn" type="button" data-zoom="1">원본 크게 보기</button>
+        </figure>
+        <figure class="img-box">
+          <img src="/.cursor/projects/c-Users-user-cursor/assets/c__Users_user_AppData_Roaming_Cursor_User_workspaceStorage_5c6c1454ed90c7906359a13de0107f6d_images_image-089af754-52c7-4717-8416-25025a525a64.png" alt="실전 차트 이미지 2" />
+          <p>모바일 실전 대응 루틴</p>
+          <button class="zoom-btn" type="button" data-zoom="2">원본 크게 보기</button>
+        </figure>
+        <figure class="img-box">
+          <img src="/.cursor/projects/c-Users-user-cursor/assets/c__Users_user_AppData_Roaming_Cursor_User_workspaceStorage_5c6c1454ed90c7906359a13de0107f6d_images_image-1f6c05ed-7405-4853-8f97-3de6c7bf1570.png" alt="실전 차트 이미지 3" />
+          <p>1:1 피드백 코칭 방식</p>
+          <button class="zoom-btn" type="button" data-zoom="3">원본 크게 보기</button>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="proof">
+      <h2>이런 분들에게 특히 추천합니다</h2>
+      <div class="proof">
+        <article class="card">
+          <h3>추천 대상</h3>
+          <ul class="list">
+            <li>수익보다 손실이 더 커져 계좌가 줄어드는 분</li>
+            <li>롱/숏 진입 기준이 매번 바뀌는 분</li>
+            <li>손절을 늦게 해서 한 번에 크게 잃는 분</li>
+            <li>유튜브 정보가 너무 많아 오히려 혼란스러운 분</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>상담에서 먼저 드리는 것</h3>
+          <ul class="list">
+            <li>현재 매매 패턴 진단 체크리스트</li>
+            <li>개인별 리스크 허용 범위 설정법</li>
+            <li>초보용 2주 실전 루틴 샘플</li>
+            <li>상담 후 바로 적용 가능한 개선 포인트 3가지</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="inquiry">
+      <div class="inquiry">
+        <div>
+          <h2>지금 문의하면, <br />무료 진단 상담 먼저 진행해드립니다</h2>
+          <p class="muted">아래 정보만 남겨주시면 담당자가 순차적으로 연락드립니다. 광고 유입 전용 혜택으로 <strong style="color:#ffd98a;">기초 진단 리포트</strong>를 함께 제공합니다.</p>
+          <p class="countdown" id="countdown">이번 혜택 마감까지: 계산 중...</p>
+          <p class="fine">응답 시간: 평균 10분~1시간 (운영시간 기준)</p>
+        </div>
+        <form id="leadForm">
+          <input type="text" name="name" placeholder="이름" required />
+          <input type="tel" name="phone" placeholder="연락처 (예: 010-0000-0000)" required />
+          <select name="experience" required>
+            <option value="">선물 거래 경험을 선택하세요</option>
+            <option>처음 시작</option>
+            <option>1~3개월</option>
+            <option>3개월~1년</option>
+            <option>1년 이상</option>
+          </select>
+          <textarea name="message" placeholder="현재 가장 고민인 부분을 적어주세요 (예: 손절을 못해서 손실이 큽니다)"></textarea>
+          <button class="btn primary" type="submit">무료 상담 신청하기</button>
+          <p class="fine">신청 시 개인정보 수집 및 상담 안내 수신에 동의한 것으로 간주됩니다.</p>
+        </form>
+      </div>
+      <p class="risk" style="margin-top:14px;">본 랜딩페이지는 교육 및 정보 제공 목적이며, 특정 거래소/종목에 대한 투자 권유가 아닙니다.</p>
+    </section>
+
+    <footer>
+      본 페이지는 인스타그램 광고 유입 전환용 샘플입니다. 실제 운영 시 연락처, 브랜드명, 개인정보 처리방침 링크를 반드시 연결해 주세요.
+    </footer>
+  </main>
+
+  <div class="sticky-cta">
+    <a href="#inquiry">문의 남기기</a>
+  </div>
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose" type="button" aria-label="닫기">x</button>
+    <img id="lightboxImage" src="" alt="확대 차트 이미지" />
+  </div>
+
+  <script>
+    (function () {
+      var deadline = new Date();
+      deadline.setHours(deadline.getHours() + 6);
+      var el = document.getElementById("countdown");
+      function updateTimer() {
+        var now = new Date();
+        var diff = deadline - now;
+        if (diff <= 0) {
+          el.textContent = "이번 혜택 마감까지: 곧 종료";
+          return;
+        }
+        var hours = Math.floor(diff / (1000 * 60 * 60));
+        var mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        var secs = Math.floor((diff % (1000 * 60)) / 1000);
+        el.textContent = "이번 혜택 마감까지: " + hours + "시간 " + mins + "분 " + secs + "초";
+      }
+      updateTimer();
+      setInterval(updateTimer, 1000);
+    })();
+
+    document.getElementById("leadForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("상담 신청이 접수되었습니다. 입력한 연락처로 빠르게 안내드릴게요.");
+      e.target.reset();
+    });
+
+    (function () {
+      var lightbox = document.getElementById("lightbox");
+      var lightboxImage = document.getElementById("lightboxImage");
+      var closeBtn = document.getElementById("lightboxClose");
+      var buttons = document.querySelectorAll(".zoom-btn");
+
+      buttons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          var image = button.parentElement.querySelector("img");
+          lightboxImage.src = image.src;
+          lightboxImage.alt = image.alt;
+          lightbox.classList.add("open");
+        });
+      });
+
+      function closeLightbox() {
+        lightbox.classList.remove("open");
+        lightboxImage.src = "";
+      }
+
+      closeBtn.addEventListener("click", closeLightbox);
+      lightbox.addEventListener("click", function (e) {
+        if (e.target === lightbox) closeLightbox();
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") closeLightbox();
+      });
+    })();
+  </script>
+</body>
+</html>

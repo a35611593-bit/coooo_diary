@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>인스타 광고 전용 랜딩페이지 | 코인 선물 문의</title>
-  <meta name="description" content="인스타그램 광고에서 바로 문의로 전환시키는 코인 선물 랜딩페이지" />
+  <title>실전 수익 루틴 | 무료 1:1 상담</title>
+  <meta name="description" content="수익 인증과 실전 차트를 확인하고 지금 바로 무료 1:1 상담을 신청하세요." />
   <style>
     :root {
       --bg: #070b16;
@@ -62,6 +62,23 @@
       line-height: 1.2;
       letter-spacing: -0.5px;
     }
+    .headline-main {
+      display: inline-block;
+      color: #b8ff3b;
+      text-shadow: 0 0 10px rgba(184, 255, 59, 0.4), 0 0 30px rgba(184, 255, 59, 0.2);
+      animation: pulseGlow 2.2s ease-in-out infinite;
+    }
+    .headline-sub {
+      display: inline-block;
+      background: linear-gradient(90deg, #ffffff, #d7e5ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.78; }
+    }
     h2 {
       margin: 0 0 14px;
       font-size: clamp(24px, 3vw, 36px);
@@ -103,7 +120,21 @@
       background: #0f1830;
       border: 1px solid #324978;
       border-radius: 16px;
-      padding: 12px;
+      padding: 0;
+      overflow: hidden;
+    }
+    .proof-strip {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 0;
+    }
+    .proof-strip img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      border-radius: 0;
+      object-fit: cover;
+      aspect-ratio: 4 / 5;
     }
     .hero-media small {
       display: block;
@@ -270,6 +301,14 @@
       border: 1px solid #6aa2ff;
       box-shadow: 0 8px 26px #0a214c;
     }
+    .contact-links {
+      margin-top: 12px;
+      display: grid;
+      gap: 10px;
+    }
+    .contact-links .btn {
+      width: 100%;
+    }
     footer {
       padding: 26px 0 44px;
       color: #8fa5d0;
@@ -288,6 +327,9 @@
       .stats {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
+      .proof-strip {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
   </style>
 </head>
@@ -295,120 +337,160 @@
   <main class="wrap">
     <section class="hero section">
       <div class="hero-copy">
-        <span class="badge">인스타 광고 유입 전용 페이지</span>
-        <h1>잃지 않는 기준부터 배우는 <br />코인 선물 1:1 실전 코칭</h1>
-        <p class="muted">무작정 진입이 아닌 <strong>진입 기준, 손절 기준, 익절 기준</strong>을 먼저 세우는 방식으로 안내합니다. 초보도 이해 가능한 커리큘럼으로 시작하세요.</p>
+        <span class="badge">실전 수익 인증 기반 1:1 코칭</span>
+        <h1><span class="headline-main">한달만에 850% 이상 수익률,</span><br /><span class="headline-sub">어렵지 않아요</span></h1>
+        <p class="muted">혼자 하다 반복 손실을 겪는 분들을 위해 <strong>진입/청산 기준</strong>을 단순하게 정리했습니다. 복잡한 이론보다, 바로 적용 가능한 실전 루틴으로 안내합니다.</p>
         <div class="btns">
-          <a class="btn primary" href="#inquiry">지금 무료 상담 신청</a>
-          <a class="btn secondary" href="#proof">검증 내용 먼저 보기</a>
+          <a class="btn primary" href="#inquiry">30초 무료진단 받기</a>
+          <a class="btn secondary" href="#strategy">실전 차트 먼저 보기</a>
         </div>
         <div class="stats">
-          <div class="stat"><small class="muted">상담 신청자</small><b>2,300+</b></div>
-          <div class="stat"><small class="muted">누적 코칭 시간</small><b>4,800h+</b></div>
-          <div class="stat"><small class="muted">재수강 비율</small><b>71%</b></div>
+          <div class="stat"><small class="muted">누적 상담 신청</small><b>2,300+</b></div>
+          <div class="stat"><small class="muted">실전 인증 업로드</small><b>매일</b></div>
+          <div class="stat"><small class="muted">평균 첫 응답</small><b>10분</b></div>
         </div>
-        <p class="risk">가상자산 파생상품 거래는 높은 변동성과 원금 손실 위험이 있습니다. 본 페이지는 수익을 보장하지 않으며, 모든 투자의 책임은 본인에게 있습니다.</p>
+        <p class="risk">암호화폐 선물 거래는 높은 위험을 수반하며 원금 손실 가능성이 있습니다. 본 페이지는 교육/정보 제공 목적이며 수익을 보장하지 않습니다.</p>
       </div>
       <div class="hero-media">
-        <img src="images/chart1.png" alt="실전 차트 이미지" />
-        <small>실전 차트 리딩 예시 이미지</small>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>왜 문의가 몰리는지, 결과로 보여드립니다</h2>
-      <p class="muted">인스타에서 보고 오신 분들이 가장 많이 물어보는 핵심을 먼저 정리했습니다.</p>
-      <div class="grid-3">
-        <article class="card">
-          <h3>1) 진입 타이밍 기준표 제공</h3>
-          <p class="muted">감으로 눌러 사는 습관을 끊고, 조건 충족 시에만 진입하도록 훈련합니다.</p>
-        </article>
-        <article class="card">
-          <h3>2) 손절/익절 자동화 루틴</h3>
-          <p class="muted">손실 확대를 줄이고, 수익 구간에서 지키는 습관을 만들 수 있습니다.</p>
-        </article>
-        <article class="card">
-          <h3>3) 개인별 피드백</h3>
-          <p class="muted">매매일지를 기반으로 실제 실수 패턴을 짚어 개선 방향을 안내합니다.</p>
-        </article>
-      </div>
-
-      <div class="img-row">
-        <figure class="img-box">
-          <img src="images/chart1.png" alt="실전 차트 분석 예시" />
-          <p>차트 기준 설정 예시</p>
-          <button class="zoom-btn" type="button" data-zoom="1">원본 크게 보기</button>
-        </figure>
-        <figure class="img-box">
-          <img src="images/chart2.png" alt="실전 차트 이미지 2" />
-          <p>모바일 실전 대응 루틴</p>
-          <button class="zoom-btn" type="button" data-zoom="2">원본 크게 보기</button>
-        </figure>
-        <figure class="img-box">
-          <img src="images/chart3.png" alt="실전 차트 이미지 3" />
-          <p>1:1 피드백 코칭 방식</p>
-          <button class="zoom-btn" type="button" data-zoom="3">원본 크게 보기</button>
-        </figure>
+        <div class="proof-strip">
+          <img src="images/proof1.png" alt="실전 수익 이미지 1" />
+          <img src="images/proof2.png" alt="실전 수익 이미지 2" />
+          <img src="images/proof3.png" alt="실전 수익 이미지 3" />
+          <img src="images/proof4.png" alt="실전 수익 이미지 4" />
+          <img src="images/proof5.png" alt="실전 수익 이미지 5" />
+          <img src="images/proof6.png" alt="실전 수익 이미지 6" />
+          <img src="images/proof7.png" alt="실전 수익 이미지 7" />
+          <img src="images/proof8.png" alt="실전 수익 이미지 8" />
+          <img src="images/proof9.png" alt="실전 수익 이미지 9" />
+          <img src="images/proof10.png" alt="실전 수익 이미지 10" />
+        </div>
+        <small>실전 진입/청산 수익 이미지</small>
       </div>
     </section>
 
     <section class="section" id="proof">
-      <h2>이런 분들에게 특히 추천합니다</h2>
+      <h2>왜 대부분 상담부터 시작할까요?</h2>
+      <p class="muted">같은 시장에서도 기준 유무에 따라 손익 곡선이 완전히 달라집니다.</p>
       <div class="proof">
         <article class="card">
-          <h3>추천 대상</h3>
+          <h3>혼자 매매할 때 자주 생기는 문제</h3>
           <ul class="list">
-            <li>수익보다 손실이 더 커져 계좌가 줄어드는 분</li>
-            <li>롱/숏 진입 기준이 매번 바뀌는 분</li>
-            <li>손절을 늦게 해서 한 번에 크게 잃는 분</li>
-            <li>유튜브 정보가 너무 많아 오히려 혼란스러운 분</li>
+            <li>뉴스/감정에 따라 진입 타이밍이 계속 흔들림</li>
+            <li>손절이 늦어져 한 번의 실수가 크게 누적됨</li>
+            <li>수익 구간에서 조급한 청산 후 재진입 반복</li>
+            <li>차트에 매여 일상 루틴이 무너짐</li>
           </ul>
         </article>
         <article class="card">
-          <h3>상담에서 먼저 드리는 것</h3>
+          <h3>상담 후 바로 적용하는 기준 루틴</h3>
           <ul class="list">
-            <li>현재 매매 패턴 진단 체크리스트</li>
-            <li>개인별 리스크 허용 범위 설정법</li>
-            <li>초보용 2주 실전 루틴 샘플</li>
-            <li>상담 후 바로 적용 가능한 개선 포인트 3가지</li>
+            <li>진입 조건 충족 구간만 선별 진입</li>
+            <li>손절 라인을 사전에 고정해 큰 손실 차단</li>
+            <li>분할 청산으로 수익 구간을 체계적으로 관리</li>
+            <li>출근/업무/퇴근 루틴에 맞춰 현실적으로 운영</li>
           </ul>
         </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>문의 후 24시간, 이렇게 달라집니다</h2>
+      <div class="grid-3">
+        <article class="card">
+          <h3>AM 08:10</h3>
+          <p class="muted">출근길 1분: 오늘 진입 가능 구간만 빠르게 확인</p>
+        </article>
+        <article class="card">
+          <h3>PM 12:40</h3>
+          <p class="muted">점심 3분: 조건 충족 여부 체크 후 계획대로 실행</p>
+        </article>
+        <article class="card">
+          <h3>PM 08:30</h3>
+          <p class="muted">퇴근 후 5분: 로그 점검하고 다음 진입 기준 세팅</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="strategy">
+      <h2>실전 진입/청산</h2>
+      <p class="muted">문의 전 꼭 확인하세요. 진입/청산 로그가 남은 실전 차트 예시입니다.</p>
+      <div class="img-row">
+        <figure class="img-box">
+          <img src="images/chart1.png" alt="실전 차트 분석 예시" />
+          <p>VWMA 기반 평균 회귀 진입 예시</p>
+          <button class="zoom-btn" type="button" data-zoom="1">원본 크게 보기</button>
+        </figure>
+        <figure class="img-box">
+          <img src="images/chart3.png" alt="실전 차트 이미지 2" />
+          <p>추세 + 모멘텀 복합 구간 대응</p>
+          <button class="zoom-btn" type="button" data-zoom="2">원본 크게 보기</button>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>지금 문의하면 먼저 해결되는 핵심 2가지</h2>
+      <div class="proof">
+        <article class="card">
+          <h3>상담을 신청하는 대표 고민</h3>
+          <ul class="list">
+            <li>수익보다 손실이 더 크게 누적되는 문제</li>
+            <li>손절 타이밍이 늦어 계좌 변동이 큰 문제</li>
+            <li>롱/숏 기준이 매번 바뀌는 문제</li>
+            <li>정보 과다로 기준이 흔들리는 문제</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>상담 신청 즉시 받는 것</h3>
+          <ul class="list">
+            <li>개인 매매 패턴 1:1 진단표</li>
+            <li>손실 제한 중심 리스크 설정안</li>
+            <li>2주 실행용 실전 체크리스트</li>
+            <li>당장 고쳐야 할 우선순위 3가지</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>문의 전 자주 묻는 질문</h2>
+      <div class="card">
+        <p><strong>Q.</strong> 완전 초보도 바로 시작할 수 있나요?<br /><span class="muted">A. 가능합니다. 현재 수준을 먼저 진단하고, 이해 가능한 단계부터 맞춤 루틴으로 안내합니다.</span></p>
+        <hr style="border:0;border-top:1px solid #2a3c64;margin:12px 0;" />
+        <p><strong>Q.</strong> 왜 먼저 상담을 받아야 하나요?<br /><span class="muted">A. 같은 전략도 사람마다 리스크 허용 범위가 달라서, 본인 기준에 맞는 세팅이 먼저 필요합니다.</span></p>
+        <hr style="border:0;border-top:1px solid #2a3c64;margin:12px 0;" />
+        <p><strong>Q.</strong> 수익이 보장되나요?<br /><span class="muted">A. 보장되지 않습니다. 손실 가능성을 전제로 리스크 관리 중심으로 운영합니다.</span></p>
       </div>
     </section>
 
     <section class="section" id="inquiry">
       <div class="inquiry">
         <div>
-          <h2>지금 문의하면, <br />무료 진단 상담 먼저 진행해드립니다</h2>
-          <p class="muted">아래 정보만 남겨주시면 담당자가 순차적으로 연락드립니다. 광고 유입 전용 혜택으로 <strong style="color:#ffd98a;">기초 진단 리포트</strong>를 함께 제공합니다.</p>
+          <h2>지금 문의하면,<br />오늘 안에 1:1 진단 시작합니다</h2>
+          <p class="muted">현재 매매 습관을 먼저 분석한 뒤, 바로 실행 가능한 개선 루틴을 전달드립니다.</p>
           <p class="countdown" id="countdown">이번 혜택 마감까지: 계산 중...</p>
-          <p class="fine">응답 시간: 평균 10분~1시간 (운영시간 기준)</p>
+          <p class="fine">운영시간 기준 평균 응답 10분~1시간 | 상담비 0원</p>
         </div>
-        <form id="leadForm">
-          <input type="text" name="name" placeholder="이름" required />
-          <input type="tel" name="phone" placeholder="연락처 (예: 010-0000-0000)" required />
-          <select name="experience" required>
-            <option value="">선물 거래 경험을 선택하세요</option>
-            <option>처음 시작</option>
-            <option>1~3개월</option>
-            <option>3개월~1년</option>
-            <option>1년 이상</option>
-          </select>
-          <textarea name="message" placeholder="현재 가장 고민인 부분을 적어주세요 (예: 손절을 못해서 손실이 큽니다)"></textarea>
-          <button class="btn primary" type="submit">무료 상담 신청하기</button>
-          <p class="fine">신청 시 개인정보 수집 및 상담 안내 수신에 동의한 것으로 간주됩니다.</p>
-        </form>
+        <div class="card">
+          <h3 style="margin-bottom:10px;">가장 빠른 상담 신청</h3>
+          <p class="muted">카카오톡은 즉시 연결, 전화 상담은 시간 예약 후 안내드립니다.</p>
+          <div class="contact-links">
+            <a class="btn primary" href="https://open.kakao.com/o/sGvbF1li" target="_blank" rel="noopener noreferrer">카카오톡으로 지금 상담하기</a>
+            <a class="btn secondary" href="https://docs.google.com/forms/d/e/1FAIpQLScwMHUxo0fYXsU-eW5EmJDbMePK7TIE9Y8siv_IiuV7j3u4Lw/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">전화 상담 예약하기</a>
+          </div>
+          <p class="fine">버튼 클릭 시 새 창에서 열립니다. 선착순으로 순차 응대됩니다.</p>
+        </div>
       </div>
-      <p class="risk" style="margin-top:14px;">본 랜딩페이지는 교육 및 정보 제공 목적이며, 특정 거래소/종목에 대한 투자 권유가 아닙니다.</p>
+      <p class="risk" style="margin-top:14px;">투자 결과에 대한 책임은 투자자 본인에게 있으며, 본 서비스는 특정 수익을 보장하지 않습니다.</p>
     </section>
 
     <footer>
-      본 페이지는 인스타그램 광고 유입 전환용 샘플입니다. 실제 운영 시 연락처, 브랜드명, 개인정보 처리방침 링크를 반드시 연결해 주세요.
+      2026 Trading Routine Lab. All rights reserved. | 실제 운영 시 카카오톡/텔레그램 링크와 개인정보 처리방침을 반드시 연결해 주세요.
     </footer>
   </main>
 
   <div class="sticky-cta">
-    <a href="#inquiry">문의 남기기</a>
+    <a href="https://open.kakao.com/o/sGvbF1li" target="_blank" rel="noopener noreferrer">지금 카카오톡 상담</a>
   </div>
   <div class="lightbox" id="lightbox">
     <button class="lightbox-close" id="lightboxClose" type="button" aria-label="닫기">x</button>
@@ -435,12 +517,6 @@
       updateTimer();
       setInterval(updateTimer, 1000);
     })();
-
-    document.getElementById("leadForm").addEventListener("submit", function (e) {
-      e.preventDefault();
-      alert("상담 신청이 접수되었습니다. 입력한 연락처로 빠르게 안내드릴게요.");
-      e.target.reset();
-    });
 
     (function () {
       var lightbox = document.getElementById("lightbox");
